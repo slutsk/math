@@ -38,7 +38,7 @@ const d = document;
 //Четырехугольная призма
 const canvas01 = d.getElementById("prism01");
 const ctx01 = canvas01.getContext("2d");
-let x = 200, y = 60, a = 200, b = 100, a2 = 100, h = 180, left = -90;
+let x = 200, y = 4, a = 200, b = 100, a2 = 100, h = 180, left = -90;
 let xc = x, yc = y;
 drawLine(ctx01, x, y, x + a, y, "lightblue", 3, 0);
 drawLine(ctx01, x + a, y, x + a2, y + b, "lightblue", 3, 0);
@@ -110,10 +110,6 @@ drawLine(ctx01, x + a2 + left + k, y + b + h, x + a2 + k, y + b, "lightblue", 3,
 drawLine(ctx01, x - a2 + left, y + h + b, x - a2, y + b, "lightblue", 3, 0);
 drawLine(ctx01, x - a2 + left - k, y + h + b, x - a2 - k, y + b, "lightblue", 3, 0);
 
-// -----------------------------------------------------------------------------------------//
-//PROBA PROBA PROBA PROBA PROBA PROBA PROBA
-//-------------------------------------------------------------------------------------------//
-
 const canvas02 = d.getElementById("prism02");
 const ctx02 = canvas02.getContext("2d");
 xc += 620;
@@ -122,6 +118,5 @@ let dy = 100;
 quadrilateral(ctx01, xc, yc, xc + a, yc, xc + a + left , yc + h, xc + left  , yc + h, 3, "lightred", "lightblue", true);
 quadrilateral(ctx01, xc - k, yc, xc - a2 - k, yc + b, xc - a2 - k + left, yc + h + b, xc - k + left, yc + h, 3, "green", "lightblue", true);
 quadrilateral(ctx01, xc + k + a, yc, xc - a2 + k + a, yc + b, xc - a2 + left + k + a, yc + h + b, xc + left + k + a, yc + h, 3, "blue", "lightblue", true);
-
 quadrilateral(ctx01, xc + dx, yc + dy, xc + a + dx, yc + dy, xc + a + left + dx , yc + h + dy, xc + left + dx , yc + h + dy, 3, "orange", "lightblue", true);
 
