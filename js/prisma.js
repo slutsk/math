@@ -92,6 +92,53 @@ quadrilateral(ctx01, xc, yc, xc + a, yc, xc + a + left , yc + h, xc + left  , yc
 quadrilateral(ctx01, xc - k, yc, xc - a2 - k, yc + b, xc - a2 - k + left, yc + h + b, xc - k + left, yc + h, 3, "green", "lightblue", true);
 quadrilateral(ctx01, xc + k + a, yc, xc - a2 + k + a, yc + b, xc - a2 + left + k + a, yc + h + b, xc + left + k + a, yc + h, 3, "blue", "lightblue", true);
 quadrilateral(ctx01, xc + dx, yc + dy, xc + a + dx, yc + dy, xc + a + left + dx , yc + h + dy, xc + left + dx , yc + h + dy, 3, "orange", "lightblue", true);
+// -------------------------------------------------------
 
+//БОКОВЫЕ РЕБРА ----------------------------------------
 const canvas02 = d.getElementById("prism02");
 const ctx02 = canvas02.getContext("2d");
+
+//левый рисунок
+
+x = 200, y = 4, a = 200, b = 100, a2 = 100, h = 190, left = -90;
+
+drawLine(ctx02, x, y, x + a, y, "lightblue", 3, 0);
+drawLine(ctx02, x + a, y, x + a2, y + b, "lightblue", 3, 0);
+drawLine(ctx02, x + a2, y + b, x - a2, y + b, "lightblue", 3, 0);
+drawLine(ctx02, x, y , x - a2, y + b, "lightblue", 3, 0);
+
+drawLine(ctx02, x + left, y + h, x + a + left, y + h, "lightblue", 3, 10);
+drawLine(ctx02, x + a + left, y + h, x + a2 + left, y + b + h, "lightblue", 3, 0);
+drawLine(ctx02, x + a2 + left, y + b + h, x - a2 + left, y + b + h, "lightblue", 3, 0);
+drawLine(ctx02, x + left, y + h, x - a2 + left, y + b + h, "lightblue", 3, 10);
+
+drawLine(ctx02, x + left, y + h, x, y, "yellow", 3, 10);
+drawLine(ctx02, x + a + left, y + h, x + a, y, "yellow", 3, 0);
+drawLine(ctx02, x + a2 + left, y + b + h, x + a2, y + b, "yellow", 3, 0);
+drawLine(ctx02, x - a2 + left, y + h + b, x - a2, y + b, "yellow", 3, 0);
+
+// правый рисунок
+let x1 = 600, y1 = 4, x2 = 800, y2 = 4, x3 = 950, y3 = 54, x4 = 880, y4 = 104;
+let x5 = 680, y5 = 104, x6 = 530, y6 = 54;
+drawLine(ctx02, x1, y1, x2, y2, "lightblue", 3, 0);
+drawLine(ctx02, x2, y2, x3, y3, "lightblue", 3, 0);
+drawLine(ctx02, x3, y3, x4, y4, "lightblue", 3, 0);
+drawLine(ctx02, x4, y4, x5, y5, "lightblue", 3, 0);
+drawLine(ctx02, x5, y5, x6, y6, "lightblue", 3, 0);
+drawLine(ctx02, x6, y6, x1, y1, "lightblue", 3, 0);
+
+h = 190;
+drawLine(ctx02, x1, y1+h, x2, y2+h, "lightblue", 3, 10);
+drawLine(ctx02, x2, y2+h, x3, y3+h, "lightblue", 3, 10);
+drawLine(ctx02, x3, y3+h, x4, y4+h, "lightblue", 3, 0);
+drawLine(ctx02, x4, y4+h, x5, y5+h, "lightblue", 3, 0);
+drawLine(ctx02, x5, y5+h, x6, y6+h, "lightblue", 3, 0);
+drawLine(ctx02, x6, y6+h, x1, y1+h, "lightblue", 3, 10);
+color = "yellow"
+drawLine(ctx02, x1, y1, x1, y2+h, color, 3, 10);
+drawLine(ctx02, x2, y2, x2, y2+h, color, 3, 10);
+drawLine(ctx02, x3, y3, x3, y3+h, color, 3, 0);
+drawLine(ctx02, x4, y4, x4, y4+h, color, 3, 0);
+drawLine(ctx02, x5, y5, x5, y5+h, color, 3, 0);
+drawLine(ctx02, x6, y6, x6, y6+h, color, 3, 0);
+
