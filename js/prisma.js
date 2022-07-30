@@ -218,7 +218,7 @@ drawLine(ctx04, x5, y5+h, x6, y6+h, "lightblue", 3, 0);
 let dh = 50;
 
 ctx04.globalAlpha = 0.85;
-quadrilateral(ctx04, x2 + dh, y2 - dh, x2 + dh, y2 + h + dh , x5 - dh, y5 + h + dh, x5-dh, y5 - dh, 3, "#FF4500", "#FF4500", true);
+quadrilateral(ctx04, x2 + dh, y2 - dh, x2 + dh, y2 + h - 15 , x5 - dh, y5 + h + dh, x5-dh, y5, 3, "#FF4500", "#FF4500", true);
 ctx04.globalAlpha = 1;
 
 drawLine(ctx04, x2, y2, x3, y3, "lightblue", 3, 0);
@@ -237,5 +237,6 @@ drawLine(ctx04, x3, y3, x3, y3+h, color, 3, 0);
 drawLine(ctx04, x4, y4, x4, y4+h, color, 3, 0);
 drawLine(ctx04, x5, y5, x5, y5+h, "yellow", 4, 0);
 drawLine(ctx04, x6, y6, x6, y6+h, color, 3, 0);
-
+drawLine(ctx04, x2, y2, x5, y5, color, 3, 0);
+drawLine(ctx04, x2, y2+h, x5, y5+h, color, 3, 10);
 //
