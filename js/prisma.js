@@ -147,30 +147,57 @@ drawLine(ctx02, x6, y6, x6, y6+h, color, 3, 0);
 let canvas = d.getElementById("prism03");
 let ctx03 = canvas.getContext("2d");
 
-x1 = 200, y1 = 4, x2 = 400, y2 = 4, x3 = 550, y3 = 54, x4 = 480, y4 = 104;
-x5 = 280, y5 = 104, x6 = 130, y6 = 54;
-color = "lightblue"
-drawLine(ctx03, x1, y1, x2, y2, color, 3, 0);
-drawLine(ctx03, x2, y2, x3, y3, color, 3, 0);
-drawLine(ctx03, x3, y3, x4, y4, color, 3, 0);
-drawLine(ctx03, x4, y4, x5, y5, color, 3, 0);
-drawLine(ctx03, x5, y5, x6, y6, color, 3, 0);
-drawLine(ctx03, x6, y6, x1, y1, color, 3, 0);
-dx = -125;
-drawLine(ctx03, x1 + dx, y1+h, x2 + dx, y2+h, color, 3, 10);
-drawLine(ctx03, x2 + dx, y2+h, x3 + dx, y3+h, color, 3, 10);
-drawLine(ctx03, x3 + dx, y3+h, x4 + dx, y4+h, color, 3, 0);
-drawLine(ctx03, x4 + dx, y4+h, x5 + dx, y5+h, color, 3, 0);
-drawLine(ctx03, x5 + dx, y5+h, x6 + dx, y6+h, color, 3, 0);
-drawLine(ctx03, x6 + dx, y6+h, x1 + dx, y1+h, color, 3, 10);
+x = 200, y = 4, a = 200, b = 100, a2 = 100, h = 190, left = -90;
+color = "lightblue";
+drawLine(ctx03, x, y, x + a, y, color, 3, 0);
+drawLine(ctx03, x + a, y, x + a2, y + b, color, 3, 0);
+drawLine(ctx03, x + a2, y + b, x - a2, y + b, color, 3, 0);
+drawLine(ctx03, x, y , x - a2, y + b, color, 3, 0);
 
-drawLine(ctx03, x1, y1, x1 + dx, y2+h, color, 3, 10);
-drawLine(ctx03, x2, y2, x2 + dx, y2+h, color, 3, 10);
-drawLine(ctx03, x3, y3, x3 + dx, y3+h, color, 3, 0);
-drawLine(ctx03, x4, y4, x4 + dx, y4+h, color, 3, 0);
-drawLine(ctx03, x5, y5, x5 + dx, y5+h, color, 3, 0);
-drawLine(ctx03, x6, y6, x6 + dx, y6+h, color, 3, 0);
-
-//линия диагонали
+//линии диагоналей
 color = "yellow";
-drawLine(ctx03, x1, y1, x4 + dx, y4+h, color, 3, 10);
+drawLine(ctx03, x, y, x + a2 + left, y + h + b, color, 3, 10);
+
+color = "lightblue";
+drawLine(ctx03, x + left, y + h, x + a + left, y + h, color, 3, 10);
+drawLine(ctx03, x + a + left, y + h, x + a2 + left, y + b + h, color, 3, 0);
+drawLine(ctx03, x + a2 + left, y + b + h, x - a2 + left, y + b + h, color, 3, 0);
+drawLine(ctx03, x + left, y + h, x - a2 + left, y + b + h, color, 3, 10);
+
+drawLine(ctx03, x + left, y + h, x, y, color, 3, 10);
+drawLine(ctx03, x + a + left, y + h, x + a, y, color, 3, 0);
+drawLine(ctx03, x + a2 + left, y + b + h, x + a2, y + b, color, 3, 0);
+drawLine(ctx03, x - a2 + left, y + h + b, x - a2, y + b, color, 3, 0);
+
+//правый рисунок
+
+x1 = 620, y1 = 4, x2 = 850, y2 = 4, x3 = 950, y3 = 54, x4 = 900, y4 = 104;
+x5 = 680, y5 = 104, x6 = 500, y6 = 54;
+drawLine(ctx03, x1, y1, x2, y2, "lightblue", 3, 0);
+drawLine(ctx03, x2, y2, x3, y3, "lightblue", 3, 0);
+drawLine(ctx03, x3, y3, x4, y4, "lightblue", 3, 0);
+drawLine(ctx03, x4, y4, x5, y5, "lightblue", 3, 0);
+drawLine(ctx03, x5, y5, x6, y6, "lightblue", 3, 0);
+drawLine(ctx03, x6, y6, x1, y1, "lightblue", 3, 0);3
+
+h = 190;
+drawLine(ctx03, x1, y1+h, x2, y2+h, "lightblue", 3, 10);
+drawLine(ctx03, x2, y2+h, x3, y3+h, "lightblue", 3, 10);
+drawLine(ctx03, x3, y3+h, x4, y4+h, "lightblue", 3, 0);
+drawLine(ctx03, x4, y4+h, x5, y5+h, "lightblue", 3, 0);
+drawLine(ctx03, x5, y5+h, x6, y6+h, "lightblue", 3, 0);
+drawLine(ctx03, x6, y6+h, x1, y1+h, "lightblue", 3, 10);
+
+//линии диагоналей
+color = "yellow";
+drawLine(ctx03, x2, y2, x6, y6+h, color, 3, 10);
+drawLine(ctx03, x2, y2, x5, y5+h, color, 3, 10);
+drawLine(ctx03, x2, y2, x4, y4+h, color, 3, 10);
+color = "lightblue";
+
+drawLine(ctx03, x1, y1, x1, y2+h, color, 3, 10);
+drawLine(ctx03, x2, y2, x2, y2+h, color, 3, 10);
+drawLine(ctx03, x3, y3, x3, y3+h, color, 3, 0);
+drawLine(ctx03, x4, y4, x4, y4+h, color, 3, 0);
+drawLine(ctx03, x5, y5, x5, y5+h, color, 3, 0);
+drawLine(ctx03, x6, y6, x6, y6+h, color, 3, 0);
