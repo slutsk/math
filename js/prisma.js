@@ -203,7 +203,7 @@ drawLine(ctx03, x5, y5, x5, y5+h, color, 3, 0);
 drawLine(ctx03, x6, y6, x6, y6+h, color, 3, 0);
 
 //Диагональная плоскость --------------------------
-convas = d.getElementById("prism04");
+let convas = d.getElementById("prism04");
 ctx04 = convas.getContext("2d");
 
 x1 = 100, y1 = 54, x2 = 350, y2 = 54, x3 = 550, y3 = 104, x4 = 430, y4 = 154;
@@ -239,4 +239,39 @@ drawLine(ctx04, x5, y5, x5, y5+h, "yellow", 4, 0);
 drawLine(ctx04, x6, y6, x6, y6+h, color, 3, 0);
 drawLine(ctx04, x2, y2, x5, y5, color, 3, 0);
 drawLine(ctx04, x2, y2+h, x5, y5+h, color, 3, 10);
-//
+
+// диагональное сечение
+
+convas = d.getElementById("prism05");
+ctx05 = convas.getContext("2d");
+
+x1 = 100, y1 = 4, x2 = 250, y2 = 4, x3 = 350, y3 = 54, x4 = 300, y4 = 154;
+x5 = 4, y5 = 154, h = 300;
+drawLine(ctx05, x1, y1, x2, y2, "lightblue", 3, 0);
+drawLine(ctx05, x1, y1+h, x2, y2+h, "lightblue", 3, 10);
+drawLine(ctx05, x3, y3, x4, y4, "lightblue", 3, 0);
+drawLine(ctx05, x5, y5, x1, y1, "lightblue", 3, 0);
+
+drawLine(ctx05, x5, y5+h, x1, y1+h, "lightblue", 3, 0);
+
+ctx05.globalAlpha = 0.75;
+quadrilateral(ctx05, x2, y2, x2 , y2 + h , x5, y5 + h, x5, y5, 3, "blue", "darkblue", true);
+ctx05.globalAlpha = 1;
+
+drawLine(ctx05, x2, y2, x3, y3, "lightblue", 3, 0);
+drawLine(ctx05, x4, y4, x5, y5, "lightblue", 3, 0);
+
+
+drawLine(ctx05, x2, y2+h, x3, y3+h, "lightblue", 3, 10);
+drawLine(ctx05, x3, y3+h, x4, y4+h, "lightblue", 3, 0);
+drawLine(ctx05, x4, y4+h, x5, y5+h, "lightblue", 3, 0);
+
+drawLine(ctx05, x1, y1, x1, y2+h, color, 3, 10);
+
+drawLine(ctx05, x2, y2, x2, y2+h, color, 3, 10);
+drawLine(ctx05, x3, y3, x3, y3+h, color, 3, 0);
+drawLine(ctx05, x4, y4, x4, y4+h, color, 3, 0);
+drawLine(ctx05, x5, y5, x5, y5+h, color, 3, 0);
+
+drawLine(ctx05, x2, y2, x5, y5, color, 3, 0);
+drawLine(ctx05, x2, y2+h, x5, y5+h, color, 3, 10);
