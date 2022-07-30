@@ -37,8 +37,8 @@ function quadrilateral(cxt, x1, y1, x2, y2, x3, y3, x4, y4, width ,fillColor, st
 const d = document;
 //РИСУНОК 1
 //Четырехугольная призма
-const canvas01 = d.getElementById("prism01");
-const ctx01 = canvas01.getContext("2d");
+let canvas01 = d.getElementById("prism01");
+let ctx01 = canvas01.getContext("2d");
 let x = 200, y = 4, a = 200, b = 100, a2 = 100, h = 180, left = -90;
 let xc = x, yc = y;
 drawLine(ctx01, x, y, x + a, y, "lightblue", 3, 0);
@@ -142,3 +142,35 @@ drawLine(ctx02, x4, y4, x4, y4+h, color, 3, 0);
 drawLine(ctx02, x5, y5, x5, y5+h, color, 3, 0);
 drawLine(ctx02, x6, y6, x6, y6+h, color, 3, 0);
 
+//ДИАГОНАЛИ ДИАГОНАЛИ 
+//левый рисунок
+let canvas = d.getElementById("prism03");
+let ctx03 = canvas.getContext("2d");
+
+x1 = 200, y1 = 4, x2 = 400, y2 = 4, x3 = 550, y3 = 54, x4 = 480, y4 = 104;
+x5 = 280, y5 = 104, x6 = 130, y6 = 54;
+color = "lightblue"
+drawLine(ctx03, x1, y1, x2, y2, color, 3, 0);
+drawLine(ctx03, x2, y2, x3, y3, color, 3, 0);
+drawLine(ctx03, x3, y3, x4, y4, color, 3, 0);
+drawLine(ctx03, x4, y4, x5, y5, color, 3, 0);
+drawLine(ctx03, x5, y5, x6, y6, color, 3, 0);
+drawLine(ctx03, x6, y6, x1, y1, color, 3, 0);
+dx = -125;
+drawLine(ctx03, x1 + dx, y1+h, x2 + dx, y2+h, color, 3, 10);
+drawLine(ctx03, x2 + dx, y2+h, x3 + dx, y3+h, color, 3, 10);
+drawLine(ctx03, x3 + dx, y3+h, x4 + dx, y4+h, color, 3, 0);
+drawLine(ctx03, x4 + dx, y4+h, x5 + dx, y5+h, color, 3, 0);
+drawLine(ctx03, x5 + dx, y5+h, x6 + dx, y6+h, color, 3, 0);
+drawLine(ctx03, x6 + dx, y6+h, x1 + dx, y1+h, color, 3, 10);
+
+drawLine(ctx03, x1, y1, x1 + dx, y2+h, color, 3, 10);
+drawLine(ctx03, x2, y2, x2 + dx, y2+h, color, 3, 10);
+drawLine(ctx03, x3, y3, x3 + dx, y3+h, color, 3, 0);
+drawLine(ctx03, x4, y4, x4 + dx, y4+h, color, 3, 0);
+drawLine(ctx03, x5, y5, x5 + dx, y5+h, color, 3, 0);
+drawLine(ctx03, x6, y6, x6 + dx, y6+h, color, 3, 0);
+
+//линия диагонали
+color = "yellow";
+drawLine(ctx03, x1, y1, x4 + dx, y4+h, color, 3, 10);
