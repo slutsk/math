@@ -281,14 +281,14 @@ x = 600, y = 4, a = 295, b = 100, a2 = 100, h = 350, left = -90;
 drawLine(ctx05, x, y, x + a, y, color, 3, 0);
 drawLine(ctx05, x + a, y, x + a2, y + b, color, 3, 0);
 drawLine(ctx05, x, y , x - a2, y + b, color , 3, 0);
-
+drawLine(ctx05, x + left, y + h, x + a + left, y + h, color, 3, 10);
 ctx05.globalAlpha = 0.75;
 quadrilateral(ctx05, x, y, x + a2, y + b, x + a2 + left, y + b + h, x + left, y + h, 4, "orange", "lightblue", true);
 ctx05.globalAlpha = 1;
 drawLine(ctx05, x, y, x + a2, y + b, color, 3, 0);
 drawLine(ctx05, x+left, y+h, x + a2 + left, y + b + h, color, 3, 10);
 drawLine(ctx05, x + a2, y + b, x - a2, y + b, color, 3, 0);
-drawLine(ctx05, x + left, y + h, x + a + left, y + h, color, 3, 10);
+
 drawLine(ctx05, x + a + left, y + h, x + a2 + left, y + b + h, color, 3, 0);
 drawLine(ctx05, x + a2 + left, y + b + h, x - a2 + left, y + b + h, color, 3, 0);
 drawLine(ctx05, x + left, y + h, x - a2 + left, y + b + h, color, 3, 10);
@@ -297,3 +297,65 @@ drawLine(ctx05, x + left, y + h, x, y, color , 3, 10);
 drawLine(ctx05, x + a + left, y + h, x + a, y, color , 3, 0);
 drawLine(ctx05, x + a2 + left, y + b + h, x + a2, y + b, color , 3, 0);
 drawLine(ctx05, x - a2 + left, y + h + b, x - a2, y + b, color , 3, 0);
+
+//ВИДЫ ПРИЗМ (треугольная, четырехугольная, ...)
+canvas = d.getElementById("prism06");
+ctx06 = canvas.getContext("2d");
+
+//треугольная
+x1 = 80, y1 = 4, x2 = 250, y2 = 4, x3 = 120, y3 = 90, h = 200;
+dx = -75;
+color = "#00FFFF";
+drawLine(ctx06, x1, y1, x2, y2, color, 3, 0);
+drawLine(ctx06, x2, y2, x3, y3, color, 3, 0);
+drawLine(ctx06, x3, y3, x1, y1, color, 3, 0);
+
+drawLine(ctx06, x1 + dx, y1 + h, x2 + dx, y2 + h, color, 3, 10);
+drawLine(ctx06, x2 + dx, y2 + h, x3 + dx, y3 + h, color, 3, 0);
+drawLine(ctx06, x3 + dx, y3 + h, x1 +dx, y1 + h, color, 3, 0);
+
+drawLine(ctx06, x1 + dx, y1 + h, x1, y1, color, 3, 0);
+drawLine(ctx06, x2 + dx, y2 + h, x2, y2, color, 3, 0);
+drawLine(ctx06, x3 + dx, y3 + h, x3, y3, color, 3, 0);
+
+//четырехугольная
+x1 = 300, y1 = 4, x2 = 530, y2 = 4, x3 = 470, y3 = 84, x4 = 320, y4 = 100;
+dx = -30, h = 195;
+color = "#FF00FF";
+drawLine(ctx06, x1, y1, x2, y2, color, 3, 0);
+drawLine(ctx06, x2, y2, x3, y3, color, 3, 0);
+drawLine(ctx06, x3, y3, x4, y4, color, 3, 0);
+drawLine(ctx06, x4, y4, x1, y1, color, 3, 0);
+
+drawLine(ctx06, x1+dx, y1 + h, x2+dx, y2 + h, color, 3, 10);
+drawLine(ctx06, x2+dx, y2 + h, x3+dx, y3 + h, color, 3, 0);
+drawLine(ctx06, x3+dx, y3 + h, x4+dx, y4 + h, color, 3, 0);
+drawLine(ctx06, x4+dx, y4 + h, x1+dx, y1 + h, color, 3, 0);
+
+drawLine(ctx06, x1+dx, y1 + h, x1, y1, color, 3, 0);
+drawLine(ctx06, x2+dx, y2 + h, x2, y2, color, 3, 0);
+drawLine(ctx06, x3+dx, y3 + h, x3, y3, color, 3, 0);
+drawLine(ctx06, x4+dx, y4 + h, x4, y4, color, 3, 0);
+
+//пятиугольная
+x1 = 700, y1 = 4, x2 = 790, y2 = 4, x3 = 895, y3 = 50, x4 = 848, y4 = 100, x5 = 600, y5 = 78;
+h = 195;
+color = "#98FB98";
+
+drawLine(ctx06, x1, y1, x2, y2, color, 3, 0);
+drawLine(ctx06, x2, y2, x3, y3, color, 3, 0);
+drawLine(ctx06, x3, y3, x4, y4, color, 3, 0);
+drawLine(ctx06, x4, y4, x5, y5, color, 3, 0);
+drawLine(ctx06, x5, y5, x1, y1, color, 3, 0);
+
+drawLine(ctx06, x1, y1+h, x2, y2+h, color, 3, 10);
+drawLine(ctx06, x2, y2+h, x3, y3+h, color, 3, 10);
+drawLine(ctx06, x3, y3+h, x4, y4+h, color, 3, 0);
+drawLine(ctx06, x4, y4+h, x5, y5+h, color, 3, 0);
+drawLine(ctx06, x5, y5+h, x1, y1+h, color, 3, 10);
+
+drawLine(ctx06, x1, y1+h, x1, y1, color, 3, 10);
+drawLine(ctx06, x2, y2+h, x2, y2, color, 3, 10);
+drawLine(ctx06, x3, y3+h, x3, y3, color, 3, 0);
+drawLine(ctx06, x4, y4+h, x4, y4, color, 3, 0);
+drawLine(ctx06, x5, y5+h, x5, y5, color, 3, 0);
