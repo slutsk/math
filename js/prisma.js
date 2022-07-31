@@ -17,7 +17,7 @@ function drawLine( ctx ,x1, y1, x2, y2, color, lineWidth, lineDash){
  * четырёхугольник
  */
 
-function quadrilateral(cxt, x1, y1, x2, y2, x3, y3, x4, y4, width ,fillColor, strokeColor, fill_){
+function quadrilateral(cxt, x1, y1, x2, y2, x3, y3, x4, y4, width ,fillColor, strokeColor, fill_, stroke_){
     cxt.beginPath();
     cxt.fillStyle = fillColor;
     cxt.strokeStyle = strokeColor;
@@ -30,8 +30,7 @@ function quadrilateral(cxt, x1, y1, x2, y2, x3, y3, x4, y4, width ,fillColor, st
     cxt.lineTo(x1, y1);
 
     if(fill_) cxt.fill();
-    
-    cxt.stroke();
+    if(stroke_) cxt.stroke();
 }
 
 const d = document;
@@ -88,10 +87,10 @@ ctx01.setLineDash([0]);
 xc += 620;
 let dx = -100;
 let dy = 100;
-quadrilateral(ctx01, xc, yc, xc + a, yc, xc + a + left , yc + h, xc + left  , yc + h, 3, "red", "lightblue", true);
-quadrilateral(ctx01, xc - k, yc, xc - a2 - k, yc + b, xc - a2 - k + left, yc + h + b, xc - k + left, yc + h, 3, "green", "lightblue", true);
-quadrilateral(ctx01, xc + k + a, yc, xc - a2 + k + a, yc + b, xc - a2 + left + k + a, yc + h + b, xc + left + k + a, yc + h, 3, "blue", "lightblue", true);
-quadrilateral(ctx01, xc + dx, yc + dy, xc + a + dx, yc + dy, xc + a + left + dx , yc + h + dy, xc + left + dx , yc + h + dy, 3, "orange", "lightblue", true);
+quadrilateral(ctx01, xc, yc, xc + a, yc, xc + a + left , yc + h, xc + left  , yc + h, 3, "red", "lightblue", true, true);
+quadrilateral(ctx01, xc - k, yc, xc - a2 - k, yc + b, xc - a2 - k + left, yc + h + b, xc - k + left, yc + h, 3, "green", "lightblue", true, true);
+quadrilateral(ctx01, xc + k + a, yc, xc - a2 + k + a, yc + b, xc - a2 + left + k + a, yc + h + b, xc + left + k + a, yc + h, 3, "blue", "lightblue", true, true);
+quadrilateral(ctx01, xc + dx, yc + dy, xc + a + dx, yc + dy, xc + a + left + dx , yc + h + dy, xc + left + dx , yc + h + dy, 3, "orange", "lightblue", true, true);
 // -------------------------------------------------------
 
 //БОКОВЫЕ РЕБРА ----------------------------------------
@@ -251,8 +250,9 @@ drawLine(ctx05, x1, y1, x2, y2, "lightblue", 3, 0);
 drawLine(ctx05, x1, y1+h, x2, y2+h, "lightblue", 3, 10);
 drawLine(ctx05, x3, y3, x4, y4, "lightblue", 3, 0);
 drawLine(ctx05, x5, y5, x1, y1, "lightblue", 3, 0);
-
 drawLine(ctx05, x5, y5+h, x1, y1+h, "lightblue", 3, 0);
+
+drawLine(ctx05, x1, y1, x1, y1+h, color, 3, 10);
 
 ctx05.globalAlpha = 0.75;
 quadrilateral(ctx05, x2, y2, x2 , y2 + h , x5, y5 + h, x5, y5, 3, "blue", "darkblue", true);
@@ -266,8 +266,6 @@ drawLine(ctx05, x2, y2+h, x3, y3+h, "lightblue", 3, 10);
 drawLine(ctx05, x3, y3+h, x4, y4+h, "lightblue", 3, 0);
 drawLine(ctx05, x4, y4+h, x5, y5+h, "lightblue", 3, 0);
 
-drawLine(ctx05, x1, y1, x1, y2+h, color, 3, 10);
-
 drawLine(ctx05, x2, y2, x2, y2+h, color, 3, 10);
 drawLine(ctx05, x3, y3, x3, y3+h, color, 3, 0);
 drawLine(ctx05, x4, y4, x4, y4+h, color, 3, 0);
@@ -275,3 +273,27 @@ drawLine(ctx05, x5, y5, x5, y5+h, color, 3, 0);
 
 drawLine(ctx05, x2, y2, x5, y5, color, 3, 0);
 drawLine(ctx05, x2, y2+h, x5, y5+h, color, 3, 10);
+
+//правый рисунок
+
+x = 600, y = 4, a = 295, b = 100, a2 = 100, h = 350, left = -90;
+
+drawLine(ctx05, x, y, x + a, y, color, 3, 0);
+drawLine(ctx05, x + a, y, x + a2, y + b, color, 3, 0);
+drawLine(ctx05, x, y , x - a2, y + b, color , 3, 0);
+
+ctx05.globalAlpha = 0.75;
+quadrilateral(ctx05, x, y, x + a2, y + b, x + a2 + left, y + b + h, x + left, y + h, 4, "orange", "lightblue", true);
+ctx05.globalAlpha = 1;
+drawLine(ctx05, x, y, x + a2, y + b, color, 3, 0);
+drawLine(ctx05, x+left, y+h, x + a2 + left, y + b + h, color, 3, 10);
+drawLine(ctx05, x + a2, y + b, x - a2, y + b, color, 3, 0);
+drawLine(ctx05, x + left, y + h, x + a + left, y + h, color, 3, 10);
+drawLine(ctx05, x + a + left, y + h, x + a2 + left, y + b + h, color, 3, 0);
+drawLine(ctx05, x + a2 + left, y + b + h, x - a2 + left, y + b + h, color, 3, 0);
+drawLine(ctx05, x + left, y + h, x - a2 + left, y + b + h, color, 3, 10);
+
+drawLine(ctx05, x + left, y + h, x, y, color , 3, 10);
+drawLine(ctx05, x + a + left, y + h, x + a, y, color , 3, 0);
+drawLine(ctx05, x + a2 + left, y + b + h, x + a2, y + b, color , 3, 0);
+drawLine(ctx05, x - a2 + left, y + h + b, x - a2, y + b, color , 3, 0);
