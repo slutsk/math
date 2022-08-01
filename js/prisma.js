@@ -359,3 +359,154 @@ drawLine(ctx06, x2, y2+h, x2, y2, color, 3, 10);
 drawLine(ctx06, x3, y3+h, x3, y3, color, 3, 0);
 drawLine(ctx06, x4, y4+h, x4, y4, color, 3, 0);
 drawLine(ctx06, x5, y5+h, x5, y5, color, 3, 0);
+
+// Прямая призма
+canvas = d.getElementById("prism07_1");
+ctx07_1 = canvas.getContext('2d');
+x1 = 70, y1 = 4, x2 = 270, y2 = 4, x3 = 420, y3 = 54, x4 = 350, y4 = 104;
+x5 = 150, y5 = 104, x6 = 3, y6 = 54;
+h = 190;
+//уголки
+function rectangle_corner(ctx, x1, y1, x2, y2, x3, y3, strokeColor, width){
+    ctx.beginPath();
+    ctx.strokeStyle = strokeColor;
+    ctx.lineWidth = width;
+      
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x2, y2); 
+    ctx.lineTo(x3, y3);
+    ctx.stroke();
+}
+let m = 20;
+
+rectangle_corner(ctx07_1, x1, y1 + m, x1 + m, y1 + m, x1 + m, y1, "white", 2);
+rectangle_corner(ctx07_1, x5, y5 + m , x5 + m, y5+ m,x5 + m, y5 , "white", 2);
+rectangle_corner(ctx07_1, x2 - m, y2 , x2 - m, y2 + m, x2 , y2 +m , "white", 2);
+rectangle_corner(ctx07_1, x4 - m, y4 , x4 - m, y4 + m, x4 , y4 +m , "white", 2);
+rectangle_corner(ctx07_1, x2 + m, y2 + 8 , x2 + m, y2 + m + 8, x2 , y2 + m , "white", 2);
+rectangle_corner(ctx07_1, x6 + m, y6 + 8 , x6 + m, y6 + m + 8, x6 , y6 + m , "white", 2);
+rectangle_corner(ctx07_1, x3 - m, y3 - 8 , x3 - m, y3 + m - 8, x3 , y3 + m , "white", 2);
+rectangle_corner(ctx07_1, x5 - m, y5 - 8 , x5 - m, y5 + m - 8, x5 , y5 + m , "white", 2);
+rectangle_corner(ctx07_1, x4 + m - 5, y4 - 12, x4 + m - 5, y4 + m - 12, x4 , y4 + m, "white", 2);
+rectangle_corner(ctx07_1, x6 + m - 5, y6 - 12, x6 + m - 5, y6 + m - 12, x6 , y6 + m, "white", 2);
+rectangle_corner(ctx07_1, x1 - m + 5, y1 + 12, x1 - m  + 5, y1 + 12 + m, x1 , y1 + m, "white", 2);
+rectangle_corner(ctx07_1, x3 - m + 5, y3 + 12, x3 - m  + 5, y3 + 12 + m, x3 , y3 + m, "white", 2);
+
+rectangle_corner(ctx07_1, x1, y1 - m + h, x1 + m, y1 - m + h, x1 + m, y1+h, "white", 2);
+rectangle_corner(ctx07_1, x5, y5 - m + h , x5 + m, y5 - m + h, x5 + m, y5 + h, "white", 2);
+rectangle_corner(ctx07_1, x2 - m, y2+h , x2 - m, y2 - m + h, x2 , y2 - m +h, "white", 2);
+rectangle_corner(ctx07_1, x4 - m, y4 +h, x4 - m, y4 - m + h, x4 , y4 - m +h, "white", 2);
+rectangle_corner(ctx07_1, x2 + m, y2 + h + 5, x2 + m, y2  - 10 + h, x2 , y2 - m + h, "white", 2);
+rectangle_corner(ctx07_1, x6 + m, y6 + 5 + h, x6 + m, y6 - 10 + h, x6 , y6 - m + h, "white", 2);
+rectangle_corner(ctx07_1, x3 - m + 5, y3 - m  + 14 + h,  x3 - m + 5, y3 - m - 4 + h,  x3, y3 - m + h, "white", 2);
+rectangle_corner(ctx07_1, x5 - m + 5, y5 - m  +  h + 14, x5 - m + 5, y5 - m  + h - 7, x5, y5 - m + h, "white", 2);
+rectangle_corner(ctx07_1, x4 + m - 5, y4 - 12 + h, x4 + m - 5, y4 - m - 12+h, x4 , y4 - m+h, "white", 2);
+rectangle_corner(ctx07_1, x6 + m - 5, y6 - 12 + h, x6 + m - 5, y6 - m - 12+h, x6 , y6 - m+h, "white", 2);
+rectangle_corner(ctx07_1, x1 - m + 5, y1 + 12 + h, x1 - m  + 5, y1 + 12 - m+h, x1 , y1 - m+h, "white", 2);
+
+//рисунок
+color = "#00FFFF";;
+drawLine(ctx07_1, x1, y1, x2, y2, color, 3, 0);
+drawLine(ctx07_1, x2, y2, x3, y3, color, 3, 0);
+drawLine(ctx07_1, x3, y3, x4, y4, color, 3, 0);
+drawLine(ctx07_1, x4, y4, x5, y5, color, 3, 0);
+drawLine(ctx07_1, x5, y5, x6, y6, color, 3, 0);
+drawLine(ctx07_1, x6, y6, x1, y1, color, 3, 0);
+
+drawLine(ctx07_1, x1, y1+h, x2, y2+h, color, 3, 10);
+drawLine(ctx07_1, x2, y2+h, x3, y3+h, color, 3, 10);
+drawLine(ctx07_1, x3, y3+h, x4, y4+h, color, 3, 0);
+drawLine(ctx07_1, x4, y4+h, x5, y5+h, color, 3, 0);
+drawLine(ctx07_1, x5, y5+h, x6, y6+h, color, 3, 0);
+drawLine(ctx07_1, x6, y6+h, x1, y1+h, color, 3, 10);
+
+drawLine(ctx07_1, x1, y1, x1, y2+h, color, 3, 10);
+drawLine(ctx07_1, x2, y2, x2, y2+h, color, 3, 10);
+drawLine(ctx07_1, x3, y3, x3, y3+h, color, 3, 0);
+drawLine(ctx07_1, x4, y4, x4, y4+h, color, 3, 0);
+drawLine(ctx07_1, x5, y5, x5, y5+h, color, 3, 0);
+drawLine(ctx07_1, x6, y6, x6, y6+h, color, 3, 0);
+
+rectangle_corner(ctx07_1, x3 - m + 2, y3 + 12 + h, x3 - m  + 2, y3 + 14 - m+h, x3 , y3 - m+h, "white", 2);
+// второй рисунок
+
+canvas = d.getElementById("prism07_2");
+ctx07_2 = canvas.getContext('2d');
+x1 = 80, y1 = 4, x2 = 250, y2 = 4, x3 = 120, y3 = 90, h = 205;
+dx = 0;
+
+rectangle_corner(ctx07_2, x1, y1 + m, x1 + m, y1 + m, x1 + m, y1, "white", 2);
+rectangle_corner(ctx07_2, x2 - m, y2 , x2 - m, y2 + m, x2 , y2 +m , "white", 2);
+rectangle_corner(ctx07_2, x2 - m, y2+h , x2 - m, y2 - m + h, x2 , y2 - m +h, "white", 2);
+rectangle_corner(ctx07_2, x1, y1 - m + h, x1 + m, y1 - m + h, x1 + m, y1+h, "white", 2);
+rectangle_corner(ctx07_2, x2 - m + 5, y2 + 12, x2 - m  + 5, y2 + 12 + m, x2 , y2 + m, "white", 2);
+rectangle_corner(ctx07_2, x3 + m - 5, y3 - 12, x3 + m - 5, y3 + m - 12, x3 , y3 + m, "white", 2);
+rectangle_corner(ctx07_2, x3 + m - 5, y3 - 12 + h, x3 + m - 5, y3 - m - 12+h, x3 , y3 - m+h, "white", 2);
+rectangle_corner(ctx07_2, x1, y1 + m, x1 + m - 14, y1 + m + 15, x1 + m - 14, y1 + 14,  "white", 2);
+rectangle_corner(ctx07_2, x1, y1 - m + h, x1 + m - 14, y1 - m + 15 +h, x1 + m - 14, y1 - m + h + 30, "white", 2);
+rectangle_corner(ctx07_2, x3, y3 + m, x3 - m/2, y3 + m/2 - 10 , x3 - m/2, y3 - m,  "white", 2);
+rectangle_corner(ctx07_2, x3, y3 - m + h, x3 - m/2, y3 - m - 20 + h, x3 - m/2, y3 - m + h,  "white", 2);
+
+color = "#FF00FF";
+drawLine(ctx07_2, x1, y1, x2, y2, color, 3, 0);
+drawLine(ctx07_2, x2, y2, x3, y3, color, 3, 0);
+drawLine(ctx07_2, x3, y3, x1, y1, color, 3, 0);
+
+drawLine(ctx07_2, x1 + dx, y1 + h, x2 + dx, y2 + h, color, 3, 10);
+drawLine(ctx07_2, x2 + dx, y2 + h, x3 + dx, y3 + h, color, 3, 0);
+drawLine(ctx07_2, x3 + dx, y3 + h, x1 +dx, y1 + h, color, 3, 0);
+
+drawLine(ctx07_2, x1 + dx, y1 + h, x1, y1, color, 3, 0);
+drawLine(ctx07_2, x2 + dx, y2 + h, x2, y2, color, 3, 0);
+drawLine(ctx07_2, x3 + dx, y3 + h, x3, y3, color, 3, 0);
+
+rectangle_corner(ctx07_2, x2 - m + 2, y2 + 12 + h, x2 - m  + 2, y2 + 14 - m+h, x2 , y2 - m+h, "white", 2);
+
+// третий рисунк
+canvas = d.getElementById("prism07_3");
+ctx07_3 = canvas.getContext('2d');
+
+x1 = 102, y1 = 4, x2 = 190, y2 = 4, x3 = 295, y3 = 50, x4 = 248, y4 = 100, x5 = 5, y5 = 78;
+h = 195;
+color = "#98FB98";
+
+rectangle_corner(ctx07_3, x1, y1 + m, x1 + m, y1 + m, x1 + m, y1, "white", 2);
+rectangle_corner(ctx07_3, x5, y5 + m , x5 + m, y5+ m + 2,x5 + m, y5 , "white", 2);
+rectangle_corner(ctx07_3, x2 - m, y2 , x2 - m, y2 + m, x2 , y2 +m , "white", 2);
+rectangle_corner(ctx07_3, x4 - m, y4 , x4 - m, y4 + m - 2, x4 , y4 +m , "white", 2);
+rectangle_corner(ctx07_3, x2 + m, y2 + 8 , x2 + m, y2 + m + 8, x2 , y2 + m , "white", 2);
+rectangle_corner(ctx07_3, x3 - m, y3 - 8 , x3 - m, y3 + m - 8, x3 , y3 + m , "white", 2);
+rectangle_corner(ctx07_3, x5, y5 + m, x5 + m/2 , y5 + m - 8, x5 + m/2 , y5 - m/2 +2 , "white", 2);
+rectangle_corner(ctx07_3, x4 + m - 10, y4 - 12, x4 + m - 10, y4 + m - 10, x4, y4 + m, "white", 2);
+rectangle_corner(ctx07_3, x1 - m + 5, y1 + 12, x1 - m  + 5, y1 + 12 + m, x1 , y1 + m, "white", 2);
+rectangle_corner(ctx07_3, x3 - m + 5, y3 + 12, x3 - m  + 5, y3 + 12 + m, x3 , y3 + m, "white", 2);
+
+rectangle_corner(ctx07_3, x1, y1 - m + h, x1 + m, y1 - m + h, x1 + m, y1+h, "white", 2);
+rectangle_corner(ctx07_3, x5, y5 - m + h , x5 + m, y5 - m + h + 2, x5 + m, y5 + h, "white", 2);
+rectangle_corner(ctx07_3, x2 - m, y2+h , x2 - m, y2 - m + h, x2 , y2 - m +h, "white", 2);
+rectangle_corner(ctx07_3, x4 - m, y4 +h, x4 - m, y4 - m + h, x4 , y4 - m + h + 2, "white", 2);
+rectangle_corner(ctx07_3, x2 + m, y2 + h + 8, x2 + m, y2  - 10 + h, x2 , y2 - m + h, "white", 2);
+rectangle_corner(ctx07_3, x3 - m + 5, y3 - m  + 14 + h,  x3 - m + 5, y3 - m - 6 + h,  x3, y3 - m + h, "white", 2);
+rectangle_corner(ctx07_3, x5, y5 - m  +  h, x5 + m/2, y5 - m  + h - 8, x5 + m/2, y5 - m/2 + h + 2, "white", 2);
+rectangle_corner(ctx07_3, x4 + m - 10, y4 - 12 + h, x4 + m - 10, y4 - m - 12 + h, x4, y4 - m + h + 2, "white", 2);
+rectangle_corner(ctx07_3, x1 - m + 5, y1 + 12 + h, x1 - m  + 5, y1 + 12 - m+h, x1 , y1 - m+h, "white", 2);
+
+drawLine(ctx07_3, x1, y1, x2, y2, color, 3, 0);
+drawLine(ctx07_3, x2, y2, x3, y3, color, 3, 0);
+drawLine(ctx07_3, x3, y3, x4, y4, color, 3, 0);
+drawLine(ctx07_3, x4, y4, x5, y5, color, 3, 0);
+drawLine(ctx07_3, x5, y5, x1, y1, color, 3, 0);
+
+drawLine(ctx07_3, x1, y1+h, x2, y2+h, color, 3, 10);
+drawLine(ctx07_3, x2, y2+h, x3, y3+h, color, 3, 10);
+drawLine(ctx07_3, x3, y3+h, x4, y4+h, color, 3, 0);
+drawLine(ctx07_3, x4, y4+h, x5, y5+h, color, 3, 0);
+drawLine(ctx07_3, x5, y5+h, x1, y1+h, color, 3, 10);
+
+drawLine(ctx07_3, x1, y1+h, x1, y1, color, 3, 10);
+drawLine(ctx07_3, x2, y2+h, x2, y2, color, 3, 10);
+drawLine(ctx07_3, x3, y3+h, x3, y3, color, 3, 0);
+drawLine(ctx07_3, x4, y4+h, x4, y4, color, 3, 0);
+drawLine(ctx07_3, x5, y5+h, x5, y5, color, 3, 0);
+
+rectangle_corner(ctx07_3, x3 - m/2, y3 + 12 + h, x3 - m/2, y3 + 12 - m+h, x3 , y3 - m+h, "white", 2);
